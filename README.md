@@ -1,6 +1,7 @@
 # TrabalhoPadroesDeProjeto
 Trabalho da Disciplina de Engenharia de Software - Implementando Padrões de Projeto
 
+O presente trabalho utiliza como fonte de referência o conteúdo disponibilizado no site Refactoring Guru, acessível em: https://refactoring.guru.
 ## 1 - Padrão Criacional: Singleton
 Qual Problema ele resolve?
 
