@@ -18,6 +18,11 @@ Qual a Solução?
 - O construtor da classe é privado, dessa forma, outros objetos não podem usar o operador new com a classe singleton
 - Criar um método estático que age como um construtor. Esse método vai chamar o construtor privado, e assim todas as chamadas seguintes para esse método chamarão o objeto já criado previamente.
 
+Diagrama UML do funcionamento do Singleton:
+
+![Singleton](https://github.com/user-attachments/assets/82355459-dc1d-4e21-a0c6-3dc43fc12801)
+
+
 ## Explicando o código Criacional-Singleton.py
 O método __new__ controla a criação de novas instâncias. Ele só cria uma instância caso ela ainda não existe, garantindo que só existirá uma única instância da classe.
 
@@ -34,6 +39,11 @@ Qual a Solução?
 
 Utiliza-se subclasses com a estrutura de composição ao invés de hierárquica. Dessa forma podemos estruturar partes menores das subclasses, ou seja, invés de rlacionarmos as classes diretamente entre si, as relacionamos atrave´s de classes auxiliares prórpias para conexão, deste modo, cada classe é independente de si, visto que a conexão não é mais feita dentro da implementação.
 
+Diagrama UML do funcionamento do Bridge:
+
+![Bridge](https://github.com/user-attachments/assets/9eaf120f-90d7-4ba1-b2a8-7b6fc5f67a58)
+
+
 ## Explicando o código Estrutural-Bridge.py
 Na parte do código de Implementação, há uma classe "Renderer" que possui um método abstrato "render", servindo como uma interface para que as subclasses concretas utilizem esse método. Estas subclasses definem como a implementação será feita.
 
@@ -47,6 +57,11 @@ Esse padrão soluciona o problema de quando temos formas diferentes de executar 
 Qual a Solução?
 
 Primeiramente, temos classes separadas chamadas estratégias, onde são implementadas as diferentes formas de executar a mesma tarefa. Temos a classe principal chamada contexto, que tem um campo referenciando uma das estratégias, que será executada. Porém, essa classe principal não sabe muito sobre as estratégias, a escolha da estratégia ocorre por meio de uma classe genérica interface, onde será selecionado qual estratégia será acionada.
+
+Diagrama UML do funcionamento do Strategy:
+
+![Strategy](https://github.com/user-attachments/assets/63c6fb75-38c4-4de4-a0f5-a3df3a140417)
+
 
 ## Explicando o código Comportamental-Strategy.py
 
