@@ -34,9 +34,9 @@ Qual a Solução?
 Utiliza-se subclasses com a estrutura de composição ao invés de hierárquica. Dessa forma podemos estruturar partes menores das subclasses, ou seja, invés de rlacionarmos as classes diretamente entre si, as relacionamos atrave´s de classes auxiliares prórpias para conexão, deste modo, cada classe é independente de si, visto que a conexão não é mais feita dentro da implementação.
 
 ## Explicando o código Estrutural-Bridge.py
-Na parte do código de Implementação, há uma classe "Renderer" que possui um método abstrato dizendo como será implementado o "render". E depois, são definidos os métodos de como o Render pode ser implementado. Por exemplo, no código, foi implementado o método de Render "Desenhando {shape.name} com linhas vetoriais".
+Na parte do código de Implementação, há uma classe "Renderer" que possui um método abstrato "render", servindo como uma interface para que as subclasses concretas utilizem esse método. Estas subclasses definem como a implementação será feita.
 
-Depois, na parte de Abstração, é definido uma classe "Shape", que utiliza a classe Renderer. ***PAREI AQUI
+Depois, na parte de Abstração, é definido uma classe "Shape". Ela é uma abstração base, representando o conceito de uma forma geométrica, definindo um nome e um comportamento(draw). O método draw chama o método render da classe Renderer, delegando a responsabilidade da implementação a ela. A classe Shape não sabe e não precisa saber como a forma será desenhada, pois é a partir desse desacoplamento que se dá o padrão Bridge. Dessa forma, podemos alterar e estender a abstração e a implementação de forma independente, sem que uma interfira na outra.
 
 ## 3 - Padrão Comportamental: Strategy
 Qual Problema ele resolve?
@@ -48,3 +48,7 @@ Qual a Solução?
 Primeiramente, temos classes separadas chamadas estratégias, onde são implementadas as diferentes formas de executar a mesma tarefa. Temos a classe principal chamada contexto, que tem um campo referenciando uma das estratégias, que será executada. Porém, essa classe principal não sabe muito sobre as estratégias, a escolha da estratégia ocorre por meio de uma classe genérica interface, onde será selecionado qual estratégia será acionada.
 
 ## Explicando o código Comportamental-Strategy.py
+
+A Interface da estratégia é representada pela classe OperationStrategy, que define o método abstrato execute. Todas as estratégias concretas devem implementar esse método, cada uma fornecendo uma forma diferente de processar as mesmas entradas
+
+O Contexto que utiliza a estratégia é a classe Calculator. Ela delega a execução da operação ao método execute da estratégia selecionada, sem precisar saber como essa operação é implementada. Essa abstração permite que o comportamento da classe Calculator seja alterado facilmente, simplesmente trocando a estratégia em tempo de execução. Assim, o padrão Strategy promove flexibilidade e desacoplamento entre o contexto e as lógicas específicas de operação.
